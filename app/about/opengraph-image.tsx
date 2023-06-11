@@ -3,7 +3,6 @@ export const revalidate = 60;
 
 import { ImageResponse } from "next/server";
 import { getPosts } from "@/app/get-posts";
-import commaNumber from "comma-number";
 
 export default async function AboutOG() {
   // rauchg photo
@@ -34,7 +33,7 @@ export default async function AboutOG() {
   ).then(res => res.arrayBuffer());
 
   const posts = await getPosts();
-  const viewsSum = posts.reduce((sum, post) => sum + post.views, 0);
+  //const viewsSum = posts.reduce((sum, post) => sum + post.views, 0);
 
   return new ImageResponse(
     (
@@ -78,7 +77,7 @@ export default async function AboutOG() {
           tw="flex w-full justify-center text-2xl text-gray-500"
           style={font("Roboto Mono 400")}
         >
-          {posts.length} posts / {commaNumber(viewsSum)} views
+          {posts.length} posts
         </footer>
       </div>
     ),

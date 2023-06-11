@@ -1,7 +1,6 @@
 export const runtime = "edge";
 
 import postsData from "@/app/posts.json";
-import commaNumber from "comma-number";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
@@ -36,18 +35,12 @@ export async function GET(req: NextRequest) {
   }
 
   if (url.searchParams.get("incr") != null) {
-    const views = 0;
     return NextResponse.json({
       ...post,
-      views,
-      viewsFormatted: commaNumber(views),
     });
   } else {
-    const views = 0;
     return NextResponse.json({
       ...post,
-      views,
-      viewsFormatted: commaNumber(Number(views)),
     });
   }
 }
