@@ -65,6 +65,7 @@ export function Header({ posts }: { posts: Post[] }) {
   );
 }
 
+/*
 function Views({ id, mutate, defaultValue }) {
   const views = defaultValue;
   const didLogViewRef = useRef(false);
@@ -85,3 +86,4 @@ function Views({ id, mutate, defaultValue }) {
 
   return <>{views != null ? <span>{views} views</span> : null}</>;
 }
+*/

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import useSWR from "swr";
 
-type SortSetting = ["date" | "views", "desc" | "asc"];
+type SortSetting = ["date", "desc" | "asc"];
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
@@ -48,7 +48,7 @@ export function Posts({ posts: initialPosts }) {
 }
 
 function List({ posts, sort }) {
-  // sort can be ["date", "desc"] or ["views", "desc"] for example
+  // sort can be ["date", "desc"] for example
   const sortedPosts = useMemo(() => {
     const [sortKey, sortDirection] = sort;
     return [...posts].sort((a, b) => {
